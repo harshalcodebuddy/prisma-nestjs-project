@@ -15,10 +15,10 @@ import { AllExceptionsFilter } from './filters/http-exception.filter';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.useGlobalFilters(new AllExceptionsFilter());
-  // app.useGlobalFilters(
-  //   new AllExceptionsFilter(),
-  //   new PrismaExceptionFilter(),
-  // );
+  app.useGlobalFilters(
+    new AllExceptionsFilter(),
+    // new PrismaExceptionFilter(),
+  );
   await app.listen(3000);
 }
 bootstrap();

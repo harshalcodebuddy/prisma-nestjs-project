@@ -12,7 +12,6 @@ import { LoggerMiddleware } from './middleware/logger.middleware';
 // import * as redisStore from 'cache-manager-redis-store';
 import * as redisStore from 'cache-manager-ioredis';
 
-
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
@@ -21,8 +20,13 @@ import * as redisStore from 'cache-manager-ioredis';
       host: 'localhost',
       port: 6379,
       ttl: 300,
-    })
-    ,PrismaModule,AuthorModule, GenreModule, BookModule, AuthModule],
+    }),
+    PrismaModule,
+    AuthorModule,
+    GenreModule,
+    BookModule,
+    AuthModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
